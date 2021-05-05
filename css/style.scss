@@ -1,0 +1,37 @@
+body
+{
+    background-image: url("../assets/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.full_size
+{
+    height: 100%;
+    width: 100%;
+}
+
+section
+{
+    margin: 400px 0px;
+    
+    .card_block
+    {
+        background-color: white;
+        border: 3px solid black;
+        border-radius: 50px;
+        padding: 3%;
+    }
+
+    img
+    {
+        height: 90%;
+        margin: 10% 0%;
+    }
+}
+
+.card-title
+{
+    font-size: large;
+}
