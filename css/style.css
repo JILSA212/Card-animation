@@ -11,14 +11,16 @@ body {
 }
 
 section {
-  margin: 400px 0px;
+  margin: 400px 0px 0px 0px;
 }
+
 section .card_block {
   background-color: white;
   border: 3px solid black;
   border-radius: 50px;
   padding: 3%;
 }
+
 section img {
   height: 90%;
   margin: 10% 0%;
@@ -28,4 +30,263 @@ section img {
   font-size: large;
 }
 
+.btn_container {
+  position: relative;
+  height: 200px;
+  width: 400px;
+  margin: 10%;
+  background-color: red;
+}
+
+.btn_container .borders {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 80px;
+  width: 160px;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.btn_container .borders a {
+  text-decoration: none;
+  color: white;
+  font-weight: 800;
+}
+
+.btn_container .borders span:nth-child(1) {
+  position: absolute;
+  background: -webkit-gradient(linear, left top, right top, from(red), to(black));
+  background: linear-gradient(to right, red, black);
+  top: 0px;
+  left: 0px;
+  bottom: none;
+  right: none;
+  height: 4px;
+  width: 100%;
+  -webkit-animation-name: anim1;
+          animation-name: anim1;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes anim1 {
+  0% {
+    -webkit-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(100%, 0%);
+            transform: translate(100%, 0%);
+  }
+}
+
+@keyframes anim1 {
+  0% {
+    -webkit-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(100%, 0%);
+            transform: translate(100%, 0%);
+  }
+}
+
+.btn_container .borders span:nth-child(2) {
+  position: absolute;
+  background: -webkit-gradient(linear, left top, left bottom, from(red), to(black));
+  background: linear-gradient(to bottom, red, black);
+  top: 0px;
+  left: none;
+  bottom: none;
+  right: 0px;
+  height: 100%;
+  width: 4px;
+  -webkit-animation-name: anim2;
+          animation-name: anim2;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes anim2 {
+  0% {
+    -webkit-transform: translate(0%, -200%);
+            transform: translate(0%, -200%);
+  }
+  100% {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+}
+
+@keyframes anim2 {
+  0% {
+    -webkit-transform: translate(0%, -200%);
+            transform: translate(0%, -200%);
+  }
+  100% {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+}
+
+.btn_container .borders span:nth-child(3) {
+  position: absolute;
+  background: -webkit-gradient(linear, right top, left top, from(red), to(black));
+  background: linear-gradient(to left, red, black);
+  top: none;
+  left: none;
+  bottom: 0px;
+  right: 0px;
+  height: 4px;
+  width: 100%;
+  -webkit-animation-name: anim3;
+          animation-name: anim3;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes anim3 {
+  0% {
+    -webkit-transform: translate(100%, 0%);
+            transform: translate(100%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%);
+  }
+}
+
+@keyframes anim3 {
+  0% {
+    -webkit-transform: translate(100%, 0%);
+            transform: translate(100%, 0%);
+  }
+  100% {
+    -webkit-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%);
+  }
+}
+
+.btn_container .borders span:nth-child(4) {
+  position: absolute;
+  background: -webkit-gradient(linear, left bottom, left top, from(red), to(black));
+  background: linear-gradient(to top, red, black);
+  top: none;
+  left: 0px;
+  bottom: 0px;
+  right: none;
+  height: 100%;
+  width: 4px;
+  -webkit-animation-name: anim4;
+          animation-name: anim4;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes anim4 {
+  0% {
+    -webkit-transform: translate(0%, 200%);
+            transform: translate(0%, 200%);
+  }
+  100% {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+}
+
+@keyframes anim4 {
+  0% {
+    -webkit-transform: translate(0%, 200%);
+            transform: translate(0%, 200%);
+  }
+  100% {
+    -webkit-transform: translate(0%, 0%);
+            transform: translate(0%, 0%);
+  }
+}
+
+.btn_container .borders:hover span {
+  background: yellow;
+}
+
+.next_page {
+  background-color: red;
+  height: 100%;
+  width: 100%;
+  border: none;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+
+.next_page:hover {
+  background: yellow;
+}
+
+.next_page:hover a {
+  color: black;
+}
+
+.third_page {
+  height: 100px;
+  width: 200px;
+  background-color: white;
+}
+
+.third_page a {
+  text-decoration: none;
+  color: black;
+}
+
+.third_page:hover {
+  -webkit-animation-name: button_move;
+          animation-name: button_move;
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+  -webkit-animation-iteration-count: 4;
+          animation-iteration-count: 4;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+@-webkit-keyframes button_move {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, -50px);
+            transform: translate(0px, -50px);
+  }
+}
+
+@keyframes button_move {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  100% {
+    -webkit-transform: translate(0px, -50px);
+            transform: translate(0px, -50px);
+  }
+}
 /*# sourceMappingURL=style.css.map */

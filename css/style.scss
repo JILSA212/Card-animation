@@ -1,3 +1,5 @@
+@import '_config';
+
 body
 {
     background-image: url("../assets/bg.jpg");
@@ -14,7 +16,7 @@ body
 
 section
 {
-    margin: 400px 0px;
+    margin: 400px 0px 0px 0px;
     
     .card_block
     {
@@ -34,4 +36,124 @@ section
 .card-title
 {
     font-size: large;
+}
+
+@mixin border_move($direction, $height, $width, $top, $bottom, $left, $right)
+{
+    position: absolute;
+    background: linear-gradient($direction, $color1, $color2);
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+    height: $height;
+    width: $width;
+}
+
+@mixin border_animation($animation_name, $zeroX, $zeroY, $hundredX, $hundredY, $animation_duration, $animation_iteration_count, $animation_function)
+{
+    @keyframes #{$animation_name}
+    {
+        0%{
+            transform: translate($zeroX, $zeroY);
+        }
+        100%{
+            transform: translate($hundredX, $hundredY);
+        }
+    }
+    animation-name: $animation_name;
+    animation-duration: $animation_duration;
+    animation-iteration-count: $animation_iteration_count;
+    animation-timing-function: $animation_function;
+}
+
+
+.btn_container
+{
+    position: relative;
+    height: 200px;
+    width: 400px;
+    margin: 10%;
+    background-color: $color1;
+
+    .borders
+    {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 80px;
+        width: 160px;
+        transform: translate(-50%,-50%);
+        overflow: hidden;
+
+        a
+        {
+            text-decoration: none;
+            color: white;
+            font-weight: 800;
+        }
+
+        span:nth-child(1)
+        {
+            @include border_move(to right, $weight, 100%, 0px, none, 0px, none);
+            @include border_animation(anim1, -100%, 0%, 100%, 0%, $animation_duration, $animation_iteration_count, $animation_function);
+        }
+        span:nth-child(2)
+        {
+            @include border_move(to bottom, 100%, $weight, 0px, none, none, 0px);
+            @include border_animation(anim2, 0%, -200%, 0%, 0%, $animation_duration, $animation_iteration_count, $animation_function);
+        }
+        span:nth-child(3)
+        {
+            @include border_move(to left, $weight, 100%, none, 0px, none, 0px);
+            @include border_animation(anim3, 100%, 0%, -100%, 0%, $animation_duration, $animation_iteration_count, $animation_function);
+        }
+        span:nth-child(4)
+        {
+            @include border_move(to top, 100%, $weight, none, 0px, 0px, none);
+            @include border_animation(anim4, 0%, 200%, 0%, -0%, $animation_duration, $animation_iteration_count, $animation_function);
+        }
+        &:hover span
+        {
+            background: yellow;
+        }
+    }
+}
+    
+.next_page
+{
+    background-color: $color1;
+    height: 100%;
+    width: 100%;
+    border: none;
+    transition-duration: 1s;
+
+    &:hover
+    {
+        background: yellow;
+
+        a
+        {
+            color: black;
+        }
+    }
+}
+
+.third_page
+{
+    height: 100px;
+    width: 200px;
+    background-color: white;
+
+    a
+    {
+        text-decoration: none;
+        color: black;
+    }
+
+    &:hover
+    {
+        @include border_animation(button_move, 0px, 0px, 0px, -50px, 0.3s, 4, linear);
+        animation-direction: alternate;       
+    }
 }
